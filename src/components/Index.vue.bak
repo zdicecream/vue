@@ -1,0 +1,59 @@
+<template>
+  <div class="blackFont">
+    <h1>{{ msg }}</h1>
+    <h2>{{ msgChina }}</h2>
+    <p>{{create}}</p>
+
+  <el-carousel :interval="4000" type="card" height="200px">
+    <el-carousel-item v-for="item in ingList" :key="item">
+      <img :src="item.src">
+      <p>{{item.txt}}</p>
+    </el-carousel-item>
+  </el-carousel>
+  </div>
+</template>
+
+<style>
+	.blueFont{color:#409EFF;text-align: center} 
+	.redFont{color:#F00;text-align: center} 
+	.blackFont{color:#303133;text-align: center;font-size: 24px;font-weight:bold;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;} 
+
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+  }
+  
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+    
+  }
+  
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
+</style>
+<script>
+export default {
+  name: 'hello',
+  data () {
+    return {
+      msg: 'Welcome to My First App',
+      msgChina: '欢迎来到我的第一个App',
+      create:"Created by ZD",
+      ingList:[
+      	{src: require('../assets/1.jpg')},
+      	{src: require('../assets/2.jpg')},
+      	{src: require('../assets/3.jpg')},
+      	{src: require('../assets/4.jpg')},
+      	{src: require('../assets/5.jpg')},
+      	{src: require('../assets/6.jpg')},
+      	{src: require('../assets/7.jpg')},
+      
+      ]
+    }
+  }
+}
+</script>

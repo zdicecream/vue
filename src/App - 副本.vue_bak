@@ -1,0 +1,38 @@
+<template>
+    <div>
+
+  <el-container>
+	  <el-header>
+	  	<elnav></elnav>
+	  </el-header>
+	  <el-container>
+	    <el-aside width="200px">
+	    	 <elnav2></elnav2>
+	    </el-aside>
+	    <el-main>
+	    	 <elnav4></elnav4>
+	    	 <elnav3></elnav3>
+	    </el-main>
+	  </el-container>
+</el-container>	
+
+    </div>
+    
+    
+</template>
+
+<script>
+
+	  // 引入elmenetui的导航组件
+    import elnav from "./elnav.vue";
+    import elnav2 from "./elnav2.vue";
+    import elnav3 from "./elnav3.vue";
+    import elnav4 from "./elnav4.vue";
+
+  export default {
+		//加载组件
+    components:{elnav,elnav2,elnav3,elnav4},
+  }
+</script>
+
+

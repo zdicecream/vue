@@ -1,0 +1,31 @@
+<template>
+	<div id="app" >
+		<div class="middleLeft">
+			<img src="@/assets/logol.svg"/>
+		</div>	
+		<div class="middleRight">
+			<elnav></elnav>	
+			<router-view/>
+		</div>
+	</div>
+</template>
+
+
+
+<script>
+
+	// 引入elmenetui的导航组件
+  import elnav from "./components/elnav.vue";
+  export default {
+  
+		//加载组件
+    components:{elnav},  
+
+  }
+  
+</script>
+
+<style>
+	.middleLeft{vertical-align:middle;float:left;}
+	.middleRight{float:center;}
+</style>

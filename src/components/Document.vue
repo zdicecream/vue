@@ -1,0 +1,33 @@
+<template>
+  <div>
+    <el-container>
+      <el-aside width="200px">
+        <elnavVertical></elnavVertical>
+      </el-aside>
+      <el-main>
+        <pageTable></pageTable>
+      </el-main>
+    </el-container>
+  </div>
+</template>
+
+<script>
+	// 引入elmenetui的导航组件
+	import pageTable from "./table.vue";
+  import elnavVertical from "./elnavVertical.vue";
+
+  export default {
+  		//加载组件
+    components:{pageTable,elnavVertical},
+
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
+</script>
+
