@@ -8,6 +8,9 @@
       <el-main class="ma">
         <router-view/>
       </el-main>
+      <el-footer class="footer">
+        <Footer></Footer>
+      </el-footer>
     </el-container>
 	</div>
 </template>
@@ -18,10 +21,13 @@
 
 	// 引入elmenetui的导航组件
   import elnav from "./components/elnav.vue";
+  import Footer from "./components/footer";
   export default {
 
 		//加载组件
-    components:{elnav},
+    components:{
+      Footer,
+      elnav},
 
   }
 
@@ -59,6 +65,8 @@
     /*position: relative;*/
     /*overflow: hidden;*/
   }
-
-
+  .footer {
+    width: 100%;
+    background-color: #303133;
+  }
 </style>

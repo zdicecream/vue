@@ -15,7 +15,7 @@ export default new Router({
   mode:'history',
   base:'/my/',
   routes: [
-		{ path: '*', redirect: '/my' },
+		{ path: '*', redirect: '/' },
     { path: '/', name: 'Index', component: Index },
     { path: "/Document", name: "Document", component: Document },
     { path: "/Download", name: "Download", component: Download },
