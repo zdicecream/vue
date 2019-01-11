@@ -1,19 +1,19 @@
 <template>
   <div>
-    <div class="blackFont">
-      <h1>{{ msg }}</h1>
-      <h2>{{ msgChina }}</h2>
-      <p>{{create}}</p>
-    </div>
+    <!--<div class="whiteFont">-->
+      <!--<span style="font-size: 60px">{{ msg }}</span><br />-->
+      <!--<span style="font-size: 60px">{{ msgChina }}</span><br />-->
+      <!--<span style="font-size: 40px">{{create}}</span>-->
+    <!--</div>-->
     <div>
-    <el-carousel :interval="4000" type="card" height="200px">
+    <el-carousel :interval="4000" height="400px">
       <el-carousel-item v-for="item in ingList" :key="item">
         <img :src="item.src"class="image">
         <p>{{item.txt}}</p>
       </el-carousel-item>
     </el-carousel>
     </div>
-    <div style="width: 29%; float:left" >
+    <div style="width: 29%; float:left;margin-left: 6px" >
       <el-collapse accordion>
         <el-collapse-item>
           <template slot="title">
@@ -72,7 +72,8 @@
 <style>
 	.blueFont{color:#409EFF;text-align: center;font-size: 24px;font-weight:bold;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;}
 	.redFont{color:#F00;text-align: center;font-size: 24px;font-weight:bold;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;}
-	.blackFont{color:#303133;text-align: center;font-size: 24px;font-weight:bold;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;}
+	.blackFont{color:#303133;text-align: center;font-size: 24px;font-weight:bold;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;background-image: url("../assets/b1.png")}
+  .whiteFont{color:#fff;text-align: center;font-size: 24px;font-weight:bold;font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;background-image: url("../assets/b1.png")}
 
   .el-carousel__item h3 {
     color: #475669;

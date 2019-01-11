@@ -1,13 +1,7 @@
 <template>
-  <div>
-    <el-container>
-      <el-aside width="200px">
-        <elnavVertical></elnavVertical>
-      </el-aside>
-      <el-main>
-        <pageTable></pageTable>
-      </el-main>
-    </el-container>
+  <div style="height: 100%;">
+    <elnavVertical style="width: 15%;height: 100%; float: left;background-color: #303133;"></elnavVertical>
+    <pageTable style="float: right;width: 83%;height: 100%"></pageTable>
   </div>
 </template>
 

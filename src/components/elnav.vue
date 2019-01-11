@@ -1,29 +1,49 @@
 <template>
   <div>
-    <div style="width: 20%;float: left;vertical-align:middle">
+    <div style="float: left;vertical-align:middle; text-align: left">
       <img src="@/assets/logol.svg"/>
     </div>
 
-    <div style="width: 70%;float: left;vertical-align:middle">
-    <el-menu :default-active="this.$router.path" class="el-menu-demo" router mode="horizontal">
+    <div style="float: left;vertical-align:middle; text-align: left">
+    <el-menu :default-active="this.$router.path" class="el-menu-demo" style="border: hidden" router mode="horizontal" background-color="#303133" text-color="#fff"
+             active-text-color="#ffd04b"  >
       <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
           {{ item.navItem }}
       </el-menu-item>
     </el-menu>
     </div>
-    <div style="width: 10%;float: left;vertical-align:middle">
-    <el-dropdown>
-      <el-button type="primary">
-        <i class="el-icon-arrow-down el-icon--right"></i>
+    <div style="float: right;vertical-align:middle; " >
+      <el-dropdown  trigger="click">
+        <el-button icon="el-icon-bell" type="text" style=" background-color: #303133;color: floralwhite;font-size: 20px;font-weight: bold"  circle></el-button>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>公告1</el-dropdown-item>
+          <el-dropdown-item>消息1</el-dropdown-item>
+          <el-dropdown-item>公告2</el-dropdown-item>
+          <el-dropdown-item>消息2</el-dropdown-item>
+          <el-dropdown-item>公告3</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <el-button type="text"  @click="dialogFormVisible = true" style="color: floralwhite;font-weight: bold">
+        登陆
       </el-button>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>公告1</el-dropdown-item>
-        <el-dropdown-item>消息1</el-dropdown-item>
-        <el-dropdown-item>公告2</el-dropdown-item>
-        <el-dropdown-item>消息2</el-dropdown-item>
-        <el-dropdown-item>公告3</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
+      <el-dialog title="用户登陆" :visible.sync="dialogFormVisible">
+        <el-form :model="form">
+          <el-form-item label="用户名" :label-width="formLabelWidth">
+            <el-input v-model="form.name" autocomplete="off"></el-input>
+          </el-form-item>
+          <el-form-item label="密码" :label-width="formLabelWidth">
+            <el-input v-model="form.passwd" autocomplete="off"></el-input>
+          </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+          <el-button @click="dialogFormVisible = false">取 消</el-button>
+          <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+        </div>
+      </el-dialog>
+      <el-button type="text" style="color: floralwhite" >
+        注销
+      </el-button>
+
     </div>
   </div>
 </template>
@@ -34,11 +54,25 @@
 		data() {
       return {
         navList:[
-            {name:'/Index',navItem:'首页'},
+            {name:'/',navItem:'首页'},
             {name:'/Document',navItem:'文档'},
             {name:'/Download',navItem:'下载'},
             {name:'/About',navItem:'关于'},
-        ]
+            {name:'/Control',navItem:'系统权限'},
+        ],
+        dialogFormVisible: false,
+        form: {
+          name: '',
+          passwd:'',
+          region: '',
+          date1: '',
+          date2: '',
+          delivery: false,
+          type: [],
+          resource: '',
+          desc: ''
+        },
+        formLabelWidth: '120px'
       }
     },
 
@@ -52,7 +86,25 @@
       handleSelect(key, keyPath) {
         console.log(this);
         console.log(key,keyPath);
+      },
+      open2() {
+        this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$message({
+            type: 'success',
+            message: '删除成功!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });
+        });
       }
+
     }
 
   }

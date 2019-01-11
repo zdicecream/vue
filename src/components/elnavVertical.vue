@@ -6,6 +6,8 @@
 	    	:collapse="isCollapse"
     default-active="2"
     class="el-menu-vertical-demo"
+        background-color="#303133" text-color="floralwhite"
+        active-text-color="#fff"
     @open="handleOpen"
     @close="handleClose">
     <el-submenu index="1">

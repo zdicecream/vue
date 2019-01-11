@@ -1,49 +1,72 @@
 <template>
-  <div>
-    <el-container >
-      <el-header>
-        <el-breadcrumb separator="/">
+  <div style="margin-left: 15px;">
+    <div>
+      <el-breadcrumb style="margin-top: 15px" separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item><a href="/">活动管理</a></el-breadcrumb-item>
-        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-        </el-breadcrumb>
-      </el-header>
-      <el-main>
-  <el-table
-    :data="tableData.filter(data => !search || (data.name.toLowerCase().includes(search.toLowerCase())  && data.address.toLowerCase().includes(search2.toLowerCase())) )"
-    style="width: 100%">
+        <el-breadcrumb-item><a href="/Document">文档</a></el-breadcrumb-item>
+
+      </el-breadcrumb>
+    </div>
+
+    <div style="margin-top: 15px">
+      <ilFrom></ilFrom>
+    </div>
+  <el-table stripe height="460"  show-summary sum-text="合计"
+    :data="tableData">
+    <el-table-column
+      type="selection">
+    </el-table-column>
     <el-table-column
       label="Date"
-      prop="date">
+      prop="date"
+      sortable>
     </el-table-column>
     <el-table-column
       label="Name"
-      prop="name">
+      prop="name"
+      sortable>
     </el-table-column>
     <el-table-column
       label="Adress"
-      prop="address">
+      prop="address"
+      show-overflow-tooltip
+      sortable>
     </el-table-column>
     <el-table-column
+      label="金额"
+      prop="money"
+      show-overflow-tooltip
+      sortable>
+    </el-table-column>
+
+    <el-table-column
+      label="Adress"
+      prop="address"
+      show-overflow-tooltip
+      sortable>
+    </el-table-column>
+    <el-table-column
+      label="Adress"
+      prop="address"
+      show-overflow-tooltip
+      sortable>
+    </el-table-column>
+    <el-table-column
+      label="Adress"
+      prop="address"
+      show-overflow-tooltip
+      sortable>
+    </el-table-column>
+    <el-table-column
+      label="Adress"
+      prop="address"
+      show-overflow-tooltip
+      sortable>
+    </el-table-column>
+
+
+    <el-table-column fixed="right" width="170px"
       align="right">
-      <template slot="header" slot-scope="scope">
-
-
-      <el-tooltip class="item" effect="dark" content="Top Center 提示文字" placement="top">
-
-        <el-input
-          v-model="search"
-          size="mini"
-          suffix-icon="el-icon-date"
-          placeholder="输入关键字搜索"/>
-        </el-tooltip>
-        <el-input
-          v-model="search2"
-          size="mini"
-          suffix-icon="el-icon-search"
-          placeholder="输入关键字搜索"/>
-      </template>
       <template slot-scope="scope">
         <el-button
           size="mini"
@@ -70,31 +93,66 @@
       </el-pagination>
     </div>
   </template>
-      </el-main>
-      </el-container>
+
   </div>
 </template>
 
 <script>
+  import ilFrom from "./ilFrom";
+
   export default {
+    components: {ilFrom},
     data() {
       return {
         tableData: [{
           date: '2016-05-02',
           name: '王小虎2',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎3',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
+          address: '上海市普陀区金沙江路 1518 弄',
+          money: '1099999'
+        },{
+          date: '2016-05-02',
+          name: '王小虎2',
+          address: '上海市普陀区金沙江路 1518 弄',
+          money: '109999999'
+        },{
+          date: '2016-05-02',
+          name: '王小虎2',
+          address: '上海市普陀区金沙江路 1518 弄',
+          money: '109999999999'
+        },{
+          date: '2016-05-02',
+          name: '王小虎2',
+          address: '上海市普陀区金沙江路 1518 弄',
+          money: '1099999'
+        },{
+          date: '2016-05-02',
+          name: '王小虎2',
+          address: '上海市普陀区金沙江路 1518 弄',
+          money: '109999999'
+        },{
+          date: '2016-05-02',
+          name: '王小虎2',
+          address: '上海市普陀区金沙江路 1518 弄',
+          money: '109999999'
+        },{
+          date: '2016-05-02',
+          name: '王小虎2',
+          address: '上海市普陀区金沙江路 1518 弄',
+          money: '1099999999'
+        },{
+          date: '2016-05-02',
+          name: '王小虎2',
+          address: '上海市普陀区金沙江路 1518 弄',
+          money: '1099999999'
+        },{
+
+
+
+
           date: '2016-05-03',
           name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          address: '上海市普陀区金沙江路 1516 弄',
+          money:'1099999999999999'
         }],
         currentPage1: 5,
         currentPage2: 5,

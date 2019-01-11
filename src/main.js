@@ -8,6 +8,11 @@ import App from './App'
 import router from './router'
 import locale from 'element-ui/lib/locale/lang/en'
 
+import axios from 'axios'
+import global_ from '../config/global.js'
+Vue.prototype.global=global_;
+axios.default.baseUrl=global_.BASE_URL;
+Vue.prototype.$ajax=axios;
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 /* eslint-disable no-new */
