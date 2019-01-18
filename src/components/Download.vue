@@ -7,6 +7,8 @@
     </el-steps>
 
     <el-progress :text-inside="true" :stroke-width="18" :percentage="100" status="success"></el-progress>
+
+    <el-input-number v-model="num1" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>
   </div>
 </template>
 
@@ -31,9 +33,14 @@
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄'
         }],
-        search: ''
+        search: '',
+        num1: 1
       }
     },
-
+    methods: {
+      handleChange(value) {
+        console.log(value);
+      }
+    }
   }
 </script>

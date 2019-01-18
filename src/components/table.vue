@@ -16,54 +16,7 @@
     <el-table-column
       type="selection">
     </el-table-column>
-    <el-table-column
-      label="Date"
-      prop="date"
-      sortable>
-    </el-table-column>
-    <el-table-column
-      label="Name"
-      prop="name"
-      sortable>
-    </el-table-column>
-    <el-table-column
-      label="Adress"
-      prop="address"
-      show-overflow-tooltip
-      sortable>
-    </el-table-column>
-    <el-table-column
-      label="金额"
-      prop="money"
-      show-overflow-tooltip
-      sortable>
-    </el-table-column>
-
-    <el-table-column
-      label="Adress"
-      prop="address"
-      show-overflow-tooltip
-      sortable>
-    </el-table-column>
-    <el-table-column
-      label="Adress"
-      prop="address"
-      show-overflow-tooltip
-      sortable>
-    </el-table-column>
-    <el-table-column
-      label="Adress"
-      prop="address"
-      show-overflow-tooltip
-      sortable>
-    </el-table-column>
-    <el-table-column
-      label="Adress"
-      prop="address"
-      show-overflow-tooltip
-      sortable>
-    </el-table-column>
-
+    <el-table-column v-for="(items,i) in tableDataType" :prop="items.nameProp" :key="i"  :label="items.nameLable" sortable > </el-table-column>
 
     <el-table-column fixed="right" width="170px"
       align="right">
@@ -104,6 +57,8 @@
     components: {ilFrom},
     data() {
       return {
+        tableDataType: [{ nameLable: '姓名', nameProp: 'name' }, { nameLable: '日期', nameProp: 'date' }, { nameLable: '地址', nameProp: 'address' },{ nameLable: '金额', nameProp: 'money' }],
+
         tableData: [{
           date: '2016-05-02',
           name: '王小虎2',

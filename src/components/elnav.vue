@@ -23,8 +23,9 @@
           <el-dropdown-item>公告3</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
+      <router-link style="text-decoration: none" to="/Login"><span style="color: floralwhite;font-weight: bold">登陆</span></router-link>
       <el-button type="text"  @click="dialogFormVisible = true" style="color: floralwhite;font-weight: bold">
-        登陆
+        注册
       </el-button>
       <el-dialog title="用户登陆" :visible.sync="dialogFormVisible">
         <el-form :model="form">
@@ -54,7 +55,7 @@
 		data() {
       return {
         navList:[
-            {name:'/',navItem:'首页'},
+            {name:'/Index',navItem:'首页'},
             {name:'/Document',navItem:'文档'},
             {name:'/Download',navItem:'下载'},
             {name:'/About',navItem:'关于'},
